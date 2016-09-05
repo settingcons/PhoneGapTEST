@@ -45,5 +45,10 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         alert('Received Event: ' + id);
+		
+		alert('cordova : ' + cordova);
+        alert('cordova.plugins : ' + cordova.plugins);
+        alert('cordova.plugins.camera : ' + cordova.plugins.camera);
+		
     }
 };
