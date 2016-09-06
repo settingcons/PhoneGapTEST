@@ -27,7 +27,7 @@ function paginaInfoPDF(idioma,fichero){
         case 'Gentamicina.pdf':
             try
             {
-                var fic = encodeURI('../content/' + idioma + '/PDF/' + fichero);
+                var fic = encodeURI('../../content/' + idioma + '/PDF/' + fichero);
                 alert(" window.plugins.fileOpener.open('" + fic + "')");
                 window.plugins.fileOpener.open(fic);
                 /*cordova.plugins.fileopener.open(fic);*/
