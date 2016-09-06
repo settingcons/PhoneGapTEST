@@ -516,22 +516,22 @@ function copyDoc1(ruta, fic) {
 function copyDoc2(ruta, fic) {
 alert('copyDoc');
     try{
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
-        fs.root.getFile("readme.txt", {create: false, exclusive: false}, function(entry) {
-            entry.file(function(fp) {
-                alert(fp.name);
-                alert(fp.fullPath);
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
+            fs.root.getFile("readme.txt", {create: false, exclusive: false}, function(entry) {
+                entry.file(function(fp) {
+                    alert(fp.name);
+                    alert(fp.fullPath);
 
 
-            }, function(e){alert('errorGetFile : ' + e.message);})
-        })
-    }, function(e){alert('errorRequestFileSystem : ' + e.message);});
+                }, function(e){alert('errorGetFile : ' + e.message);})
+            })
+        }, function(e){alert('errorRequestFileSystem : ' + e.message);});
 
-}
-catch(e)
-{
-    alert('exception : ' + e.message);
-}
+    }
+    catch(e)
+    {
+        alert('exception : ' + e.message);
+    }
 }
 
 function copyDoc4(ruta, fic) {
