@@ -586,13 +586,13 @@ function copyDoc6(ruta, fic) {
     alert('7- ' + cordova.file.externalCacheDirectory);  //Application cache on external storage. (Android)
     alert('8- ' + cordova.file.externalRootDirectory);  //External storage (SD card) root. (Android, BlackBerry 10)
 
-    var dirApp = cordova.file.applicationDirectory;
-    alert(dirApp);
+    var dirApp = cordova.file.applicationStorageDirectory + 'www/';
 
-    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (fileEntry) {
+    //antes: cordova.file.externalDataDirectory
+    window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function (fileEntry) {
         var filepath = fileEntry.toURL() + fic;
+alert(' de : ' + dirApp + ruta + fic + ' a : ' + filepath);
         var fileTransfer = new FileTransfer();
-alert('FilePath ' + filepath);
         fileTransfer.download(dirApp + ruta + fic, filepath,
             function (fileEntry) {
                 alert("download complete: " + fileEntry.toURL());
