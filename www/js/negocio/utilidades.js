@@ -466,7 +466,7 @@ alert('Origen : ' + basePath + ruta + fic);
     });
 }*/
 
-function copyDoc(ruta, fic) {
+/*function copyDoc(ruta, fic) {
     var wwwPath = window.location.pathname;
     var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
 alert('copyDoc : ' + basePath);
@@ -494,8 +494,22 @@ alert('fs.root.getFile : ' + entry.fullPath);
                 alert("file create error");
             });
     }, null);
-}
+}*/
 
+
+function copyDoc(ruta, fic) {
+alert('copyDoc');
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
+        fs.root.getFile("readme.txt", {create: false, exclusive: false}, function(entry) {
+            entry.file(function(fp) {
+                alert(fp.name);
+                alert(fp.fullPath);
+
+
+            }, function(e){alert('errorGetFile : ' + e.message);})
+        })
+    }, function(e){alert('errorRequestFileSystem : ' + e.message);});
+}
 
 /*function copyDoc(ruta, fic){
 alert('0-copyDoc ' + ruta + fic);
