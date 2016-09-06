@@ -611,7 +611,7 @@ function copyDoc6(ruta, fic) {
     var dirApp = cordova.file.applicationDirectory + 'www/';
 alert('2- en copyDoc6 ' + dirApp + ruta + fic);
     asset2sd.copyFile({
-            asset_file: dirApp + ruta + fic,  //"www/images/photo.jpg",
+            asset_file: 'www/' + ruta + fic,  //"www/images/photo.jpg",
             destination_file: fic
         },
         function () {
