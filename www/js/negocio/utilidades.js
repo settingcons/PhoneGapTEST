@@ -432,16 +432,28 @@ function getPath() {
 }
 /*InfCateter*/
 
+function gotFS(fileSystem) {
+    alert("got filesystem");
+    // save the file system for later access
+    alert(fileSystem.root.fullPath);
+    window.rootFS = fileSystem.root;
+    alert(rootFS.fullPath);
+}
+
 function copyDoc(ruta, fic){
 alert('0-copyDoc ' + ruta + fic);
     var wwwPath = window.location.pathname;
 alert('1-copyDoc ' + wwwPath);
     var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
 alert('2- ' + basePath + ruta + fic);
-
-alert("OTRO: " + "file://localhost" + entry.fullPath);
+    
 alert("OTRO: " + cordova.file.applicationDirectory);
 alert("OTRO: " + phonegap.file.applicationDirectory);
+
+    window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, function(e){alert('error');});
+
+    alert('sigue');
 
     window.resolveLocalFileSystemURL(basePath + ruta + fic,
         function(elFic){
