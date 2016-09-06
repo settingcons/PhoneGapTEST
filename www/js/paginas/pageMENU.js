@@ -32,7 +32,7 @@ function paginaInfoPDF(idioma,fichero){
 
                 var fic = encodeURI('../../content/' + idioma + '/PDF/' + fichero);
 alert(fic);
-                copyDoc2('content/' + idioma + '/PDF/' , fichero );
+                copyDoc4('content/' + idioma + '/PDF/' , fichero );
 
                 //alert(" window.plugins.fileOpener.open('" + fichero + "')");
 

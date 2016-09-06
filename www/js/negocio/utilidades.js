@@ -485,7 +485,8 @@ function copyDoc1(ruta, fic) {
             fs.root.getFile("temp", {create: true, exclusive: false},
                 function (entry) {
                     alert('fs.root.getFile : ' + entry.fullPath);
-                    fileTransfer.download(
+                    var ft = new FileTransfer();
+                    ft.download(
                         basePath + ruta + fic,
                         entry.fullPath,
                         function (entry) {
@@ -533,6 +534,32 @@ catch(e)
 }
 }
 
+function copyDoc4(ruta, fic) {
+    try {
+        var wwwPath = window.location.pathname;
+        var basePath = 'file://' + wwwPath.substring(0, wwwPath.length - 10);
+        var miFic = basePath + ruta + fic;
+alert(miFic);
+        // 'file:///storage/sdcard0/Android/data/com.settingconsultoria.PhoneGapTEST/cache/1392988146844.jpg'
+        window.resolveLocalFileSystemURI(miFic,
+            function (entry) {
+                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+                    function (fileSys) {
+                        fileSys.root.getDirectory('infCateter', {create: true, exclusive: false},
+                            function (directory) {
+                                entry.copyTo(directory, 'Gentamicina.pdf', function (entryFile) {
+                                    alert("Success. New doc: " + entryFile.fullPath);
+                                }, function(e){alert('error copyTo : ' + e.message);} );
+                            }, function(e){alert('error fileSys.root.getDirectory : ' + e.message);});
+                    }, function(e){alert('error window.requestFileSystem : ' + e.message);});
+            }, function(e){alert('error window.resolveLocalFileSystemURI : ' + e.message);});
+    }
+    catch(e)
+    {
+        alert('exception : ' + e.message);
+    }
+}
+
 /*function copyDoc(ruta, fic){
 alert('0-copyDoc ' + ruta + fic);
     var wwwPath = window.location.pathname;
@@ -565,7 +592,7 @@ alert('4-copio a : ' + documentsPath);
                         window.plugins.fileOpener.open(fic);
                     },
                     function(){
-                        aler('unsuccessful copying');
+                        alert('unsuccessful copying');
                     });
             }
         },
