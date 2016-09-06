@@ -446,9 +446,8 @@ alert('0-copyDoc ' + ruta + fic);
 alert('1-copyDoc ' + wwwPath);
     var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
 alert('2- ' + basePath + ruta + fic);
-    
+
 alert("OTRO: " + cordova.file.applicationDirectory);
-alert("OTRO: " + phonegap.file.applicationDirectory);
 
     window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, function(e){alert('error');});
