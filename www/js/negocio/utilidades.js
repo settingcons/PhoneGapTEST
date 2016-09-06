@@ -431,3 +431,30 @@ function getPath() {
     return 'file://' + path;
 }
 /*InfCateter*/
+
+function copyDoc(ruta, fic){
+alert('1-copyDoc ' + ruta + fic);
+    var wwwPath = window.location.pathname;
+    var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
+alert(2-basePath + ruta + fic);
+    window.resolveLocalFileSystemURL(basePath + ruta + fic,
+        function(elFic){
+            alert('3-success! file found')
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onSuccess, null);
+
+            function onSuccess(fileSystem) {
+                var documentsPath = fileSystem.root;
+alert('4-copio a : ' + documentsPath);
+                elFic.copyTo(documentsPath, fic,
+                    function(){
+                        alert('copying was successful')
+                    },
+                    function(){
+                        aler('unsuccessful copying')
+                    });
+            }
+        },
+        function(){
+            alert('failure! file was not found')
+        });
+}

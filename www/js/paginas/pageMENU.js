@@ -27,9 +27,15 @@ function paginaInfoPDF(idioma,fichero){
         case 'Gentamicina.pdf':
             try
             {
+
                 var fic = encodeURI('../../content/' + idioma + '/PDF/' + fichero);
-                alert(" window.plugins.fileOpener.open('" + fic + "')");
-                window.plugins.fileOpener.open(fic);
+alert(fic);
+                copyDoc('content/' + idioma + '/PDF/' , fichero );
+
+                alert(" window.plugins.fileOpener.open('" + fichero + "')");
+
+                window.plugins.fileOpener.open(fichero);
+
                 /*cordova.plugins.fileopener.open(fic);*/
 
 /*                alert("window.open(" + fic + ", '_top','location=yes, menubar=yes, titlebar=yes')");
