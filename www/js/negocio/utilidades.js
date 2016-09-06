@@ -15,7 +15,7 @@ function salir() {
     else {
 
         var v_mensaje = ObtenerTexto('msj_42');//¿Seguro que desea salir de la app?
-        var v_titulo = "FleetCare";
+        var v_titulo = "InfCateter";
         var v_botones = ObtenerTexto('msj_35');//"SI,NO";
 
         if (navigator.notification && navigator.notification.confirm) {
@@ -448,14 +448,15 @@ alert('2- ' + basePath + ruta + fic);
 alert('4-copio a : ' + documentsPath);
                 elFic.copyTo(documentsPath, fic,
                     function(){
-                        alert('copying was successful')
+                        alert('copying was successful');
+                        window.plugins.fileOpener.open(fic);
                     },
                     function(){
-                        aler('unsuccessful copying')
+                        aler('unsuccessful copying');
                     });
             }
         },
         function(){
-            alert('failure! file was not found')
+            alert('failure! file was not found');
         });
 }

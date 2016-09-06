@@ -32,9 +32,9 @@ function paginaInfoPDF(idioma,fichero){
 alert(fic);
                 copyDoc('content/' + idioma + '/PDF/' , fichero );
 
-                alert(" window.plugins.fileOpener.open('" + fichero + "')");
+                //alert(" window.plugins.fileOpener.open('" + fichero + "')");
 
-                window.plugins.fileOpener.open(fichero);
+                //window.plugins.fileOpener.open(fichero);
 
                 /*cordova.plugins.fileopener.open(fic);*/
 
