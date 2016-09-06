@@ -113,11 +113,11 @@ function deviceReady() {
         navLIFO.push("pageMENU|0|");
         $('#divInicio').hide();
         cargaPaginaInfoCateter('es-es', 0);
-        $('#pageMENU').live('pageshow',function(){ $.mobile.changePage('#pageMENU', {transition: "none"}); });
+/*        $('#pageMENU').live('pageshow',function(){ $.mobile.changePage('#pageMENU', {transition: "none"}); });*/
 
-/*        setTimeout(function() {
+        setTimeout(function() {
             $.mobile.changePage('#pageMENU', {transition: "none"});
-        }, 1000);*/
+        }, 1000);
 
 /*
 
