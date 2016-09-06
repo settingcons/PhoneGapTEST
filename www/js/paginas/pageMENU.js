@@ -13,8 +13,10 @@ function paginaInfoPDF(idioma,fichero){
                 window.open(encodeURI('content/' + idioma + '/PDF/' + fichero), '_blank','location=no, menubar=yes, titlebar=yes');
                 */
                 var fic =  fichero;
-                alert(" winjdow.plugins.fileOpener.open('" + fic + "')");
-                window.plugins.fileOpener.open(fic);
+                copyDoc1('content/' + idioma + '/PDF/' , fichero );
+
+/*                alert(" winjdow.plugins.fileOpener.open('" + fic + "')");
+                window.plugins.fileOpener.open(fic);*/
 
                 /*cordova.plugins.FileOpener.openFile(fic, function(data){alert('ok');} , function(e){ alert('error');})*/
             }
@@ -30,7 +32,7 @@ function paginaInfoPDF(idioma,fichero){
 
                 var fic = encodeURI('../../content/' + idioma + '/PDF/' + fichero);
 alert(fic);
-                copyDoc('content/' + idioma + '/PDF/' , fichero );
+                copyDoc2('content/' + idioma + '/PDF/' , fichero );
 
                 //alert(" window.plugins.fileOpener.open('" + fichero + "')");
 
@@ -51,8 +53,12 @@ alert(fic);
             try
             {
                 var fic = getPath() + 'content/' + idioma + '/PDF/' + fichero;
-                alert(" window.plugins.fileOpener.open('" + fic + "')");
-                window.plugins.fileOpener.open(fic);
+
+                copyDoc3('content/' + idioma + '/PDF/' , fichero );
+
+/*                alert(" window.plugins.fileOpener.open('" + fic + "')");
+                window.plugins.fileOpener.open(fic);*/
+
                 /*cordova.plugins.fileOpener.open(fic);*/
 
                 //alert("window.cordova.plugins.FileOpener.openFile.open(" + fic + ", function(e){ alert('error')} , function(data){ alert('ok')})");

@@ -444,7 +444,8 @@ function copyDoc(ruta, fic) {
 }*/
 
 
-/*function copyDoc(ruta, fic) {
+function copyDoc3(ruta, fic) {
+    try{
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
         alert(fileSystem.name);
 
@@ -464,41 +465,56 @@ alert('Origen : ' + basePath + ruta + fic);
     }, function (e) {
         alert('errorRequestFileSystem : ' + e.message);
     });
-}*/
 
-/*function copyDoc(ruta, fic) {
-    var wwwPath = window.location.pathname;
-    var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
-alert('copyDoc : ' + basePath);
-    window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function (fs) {
-alert('requestFileSystem : ' + basePath + ruta + fic);
-        fs.root.getFile("temp", {create: true, exclusive: false},
-            function (entry) {
-alert('fs.root.getFile : ' + entry.fullPath);
-                fileTransfer.download(
-                    basePath + ruta + fic,
-                    entry.fullPath,
-                    function (entry) {
-                        // do what you want with the entry here
-                        alert("download complete: " + entry.fullPath);
-                    },
-                    function (error) {
-                        alert("error source " + error.source);
-                        alert("error target " + error.target);
-                        alert("error code " + error.code);
-                    },
-                    false,
-                    null
-                );
-            }, function () {
-                alert("file create error");
-            });
-    }, null);
-}*/
+}
+catch(e)
+{
+    alert('exception : ' + e.message);
+}
+
+}
+
+function copyDoc1(ruta, fic) {
+
+    try {
+        var wwwPath = window.location.pathname;
+        var basePath = 'file://' + wwwPath.substring(0, wwwPath.length - 10);
+        alert('copyDoc : ' + basePath);
+        window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function (fs) {
+            alert('requestFileSystem : ' + basePath + ruta + fic);
+            fs.root.getFile("temp", {create: true, exclusive: false},
+                function (entry) {
+                    alert('fs.root.getFile : ' + entry.fullPath);
+                    fileTransfer.download(
+                        basePath + ruta + fic,
+                        entry.fullPath,
+                        function (entry) {
+                            // do what you want with the entry here
+                            alert("download complete: " + entry.fullPath);
+                        },
+                        function (error) {
+                            alert("error source " + error.source);
+                            alert("error target " + error.target);
+                            alert("error code " + error.code);
+                        },
+                        false,
+                        null
+                    );
+                }, function () {
+                    alert("file create error");
+                });
+        }, null);
+    }
+    catch(e)
+    {
+        alert('exception : ' + e.message);
+    }
+}
 
 
-function copyDoc(ruta, fic) {
+function copyDoc2(ruta, fic) {
 alert('copyDoc');
+    try{
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
         fs.root.getFile("readme.txt", {create: false, exclusive: false}, function(entry) {
             entry.file(function(fp) {
@@ -509,6 +525,12 @@ alert('copyDoc');
             }, function(e){alert('errorGetFile : ' + e.message);})
         })
     }, function(e){alert('errorRequestFileSystem : ' + e.message);});
+
+}
+catch(e)
+{
+    alert('exception : ' + e.message);
+}
 }
 
 /*function copyDoc(ruta, fic){
