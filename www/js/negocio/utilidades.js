@@ -433,10 +433,11 @@ function getPath() {
 /*InfCateter*/
 
 function copyDoc(ruta, fic){
-alert('1-copyDoc ' + ruta + fic);
+alert('0-copyDoc ' + ruta + fic);
     var wwwPath = window.location.pathname;
+alert('1-copyDoc ' + wwwPath);
     var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
-alert(2-basePath + ruta + fic);
+alert('2- ' + basePath + ruta + fic);
     window.resolveLocalFileSystemURL(basePath + ruta + fic,
         function(elFic){
             alert('3-success! file found')
