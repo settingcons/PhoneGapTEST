@@ -85,7 +85,7 @@
     <plugin name="com.cordova.plugins.fileopener" spec="1.0.1" source="pgb" />
 
     <!--Plugin para llamar por teléfono-->
-    <gap:plugin name="com.teamnemitoff.phonedialer" version="0.3.0" />
+<!--    <gap:plugin name="com.teamnemitoff.phonedialer" version="0.3.0" />-->
 
     <!--Plugin para enviar email-->
     <gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.0" />
@@ -179,6 +179,6 @@
 
 
     <access origin="*" />
-    <access origin="tel:*" launch-external="yes" />
+<!--    <access origin="tel:*" launch-external="yes" />-->
     <access origin="mailto:*" launch-external="yes" />
 </widget>
