@@ -438,6 +438,11 @@ alert('0-copyDoc ' + ruta + fic);
 alert('1-copyDoc ' + wwwPath);
     var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
 alert('2- ' + basePath + ruta + fic);
+
+alert("OTRO: " + "file://localhost" + entry.fullPath);
+alert("OTRO: " + cordova.file.applicationDirectory);
+alert("OTRO: " + phonegap.file.applicationDirectory);
+
     window.resolveLocalFileSystemURL(basePath + ruta + fic,
         function(elFic){
             alert('3-success! file found')
