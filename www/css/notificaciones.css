@@ -1,0 +1,79 @@
+#divNotificaciones ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+#divNotificaciones ul li{
+    padding: 0px;
+    border-bottom: 1px solid #dddddd;
+    font-size: 14px !important;
+}
+
+.notifImg{
+    width: 21px;
+}
+.notifImg img{
+    width: 21px;
+    height: 21px;
+}
+.notifFecha{
+    font-size: 12px !important;
+    color: #4986a2 !important;
+    width: 80px;
+}
+
+.notifAsunto{
+    text-transform: uppercase;
+    color: #4986a2 !important;
+}
+.notifTexto{
+    color: #777777 !important;
+    font-size: 12px !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    height: 16px;
+}
+.notifCheck{
+    font-size: 12px !important;
+    color: #4986a2 !important;
+    width: 30px;
+    text-align: center;
+}
+
+
+.notifFichaImg{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.notifFichaImg img {
+    width: 20px;
+}
+.notifFichaFecha{
+    color: #4986a2 !important;
+    font-size: 14px !important;
+}
+.notifFichaFecha label {
+    margin: 0px;
+}
+.notifFichaAsunto{
+    text-transform: uppercase;
+    color: #4986a2 !important;
+    font-size: 18px !important;
+    border-bottom: 1px solid #4986a2;
+}
+.notifFichaAsunto label {
+    margin: 0px;
+}
+.notifFichaTexto{
+    color: #777777 !important;
+    font-size: 16px !important;
+}
+.notifFichaTexto label {
+    margin: 5px;
+}

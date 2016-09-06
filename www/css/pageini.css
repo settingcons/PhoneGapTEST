@@ -1,0 +1,111 @@
+@media screen and (orientation: landscape){
+    .ulMenuIni {
+        display: table;
+        list-style-type: none;
+        padding: 0px;
+        margin: auto;
+        text-align: center;
+        -webkit-padding-start: inherit ;
+    }
+    .ulMenuIni li{
+        display: inline-block;
+        padding-right: 6px;
+    }
+}
+@media screen and (orientation: portrait){
+    .ulMenuIni {
+        display: block;
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+        -webkit-padding-start: inherit ;
+    }
+    .ulMenuIni li{
+        display: inline-block;
+        padding-right: 6px;
+    }
+}
+
+.divTipoInci{
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    display: inherit;
+}
+
+.fondoRuta
+{
+    background-color: #26bcf3 ! important;
+}
+.fondoKim
+{
+    background-color: #71d816 ! important;
+}
+.fondoUsu
+{
+    background-color: #f0930e ! important;
+}
+.fondoAten
+{
+    background-color: #a17cf4 ! important;
+}
+
+.txtRuta
+{
+    color: #26bcf3 ! important;
+}
+.txtKim
+{
+    color: #71d816 ! important;
+}
+.txtUsu
+{
+    color: #f0930e ! important;
+}
+.txtAten
+{
+    color: #a17cf4 ! important;
+}
+.btRuta
+{
+    background-color: #f3f3f3 !important;
+    color: #26bcf3 ! important;
+    border-color: #dddddd !important;
+}
+.btKim
+{
+    background-color: #f3f3f3 ! important;
+    color: #84bc53 ! important;
+    border-color: #dddddd !important;
+}
+.btUsu
+{
+    background-color: #f3f3f3 ! important;
+    color: #f0930e ! important;
+    border-color: #dddddd !important;
+}
+.btAten
+{
+    background-color: #f3f3f3 ! important;
+    color: #a17cf4 ! important;
+    border-color: #dddddd !important;
+}
+
+.divNotifPed{
+    float: right;
+    background-color: #d14a1a;
+    color: #ffffff;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    padding: 3px 5px;
+}
+
+.divRutasPed{
+    float: right;
+    background-color: #d14a1a;
+    color: #ffffff;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    padding: 3px 5px;
+}
