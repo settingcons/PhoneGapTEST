@@ -446,7 +446,19 @@ function copyDoc(ruta, fic) {
 function copyDoc(ruta, fic) {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
         alert(fileSystem.name);
-        alert(fileSystem.root.name);
+
+        var dirDest = fileSystem.root.fullPath;
+        alert('dirDest : ' + dirDest);
+
+        var wwwPath = window.location.pathname;
+        var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
+alert('Origen : ' + basePath + ruta + fic);
+        window.resolveLocalFileSystemURI(basePath + ruta + fic, function(fileEntry){
+            alert('onSuccess : ' + fileEntry.name);
+            var dirDestino = new DirectoryEntry({fullPath: dirDest});
+            fileEntry.copyTo(dirDestino, "Gentamicina.pdf", function(o){alert('copiado');}, function(e){alert('error : ' + e.message);} );
+        }, function(e){alert('error : ' + e.message);});
+
     }, function (e) {
         alert('error : ' + e.message);
     });
