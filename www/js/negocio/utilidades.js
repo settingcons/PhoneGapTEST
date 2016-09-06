@@ -443,7 +443,8 @@ function copyDoc(ruta, fic) {
     window.resolveLocalFileSystemURI(basePath + ruta + fic, onSuccess, function(e){alert('error : ' + e.message);});
 }*/
 
-function copyDoc(ruta, fic) {
+
+/*function copyDoc(ruta, fic) {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
         alert(fileSystem.name);
 
@@ -453,16 +454,46 @@ function copyDoc(ruta, fic) {
         var wwwPath = window.location.pathname;
         var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
 alert('Origen : ' + basePath + ruta + fic);
+
         window.resolveLocalFileSystemURI(basePath + ruta + fic, function(fileEntry){
             alert('onSuccess : ' + fileEntry.name);
             var dirDestino = new DirectoryEntry({fullPath: dirDest});
-            fileEntry.copyTo(dirDestino, "Gentamicina.pdf", function(o){alert('copiado');}, function(e){alert('error : ' + e.message);} );
-        }, function(e){alert('error : ' + e.message);});
+            fileEntry.copyTo(dirDestino, "Gentamicina.pdf", function(o){alert('copiado');}, function(e){alert('errorCopyTo : ' + e.message);} );
+        }, function(e){alert('errorResolveLocalFileSystemURI : ' + e.message);});
 
     }, function (e) {
-        alert('error : ' + e.message);
+        alert('errorRequestFileSystem : ' + e.message);
     });
+}*/
+
+function copyDoc(ruta, fic) {
+    var wwwPath = window.location.pathname;
+    var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
+
+    window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function (fs) {
+        fs.root.getFile("temp", {create: true, exclusive: false},
+            function (entry) {
+                fileTransfer.download(
+                    basePath + ruta + fic,
+                    entry.fullPath,
+                    function (entry) {
+                        // do what you want with the entry here
+                        alert("download complete: " + entry.fullPath);
+                    },
+                    function (error) {
+                        alert("error source " + error.source);
+                        alert("error target " + error.target);
+                        alert("error code " + error.code);
+                    },
+                    false,
+                    null
+                );
+            }, function () {
+                alert("file create error");
+            });
+    }, null);
 }
+
 
 /*function copyDoc(ruta, fic){
 alert('0-copyDoc ' + ruta + fic);
