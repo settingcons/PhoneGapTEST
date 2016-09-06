@@ -540,7 +540,8 @@ function copyDoc4(ruta, fic) {
         var basePath = 'file://' + wwwPath.substring(0, wwwPath.length - 10);
         var miFic = basePath + ruta + fic;
 alert(miFic);
-        // 'file:///storage/sdcard0/Android/data/com.settingconsultoria.PhoneGapTEST/cache/1392988146844.jpg'
+        miFic = 'file:///storage/sdcard0/Android/data/com.settingconsultoria.PhoneGapTEST/www/' + ruta+ fic;
+alert(miFic);
         window.resolveLocalFileSystemURI(miFic,
             function (entry) {
                 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
@@ -553,6 +554,20 @@ alert(miFic);
                             }, function(e){alert('error fileSys.root.getDirectory : ' + e.message);});
                     }, function(e){alert('error window.requestFileSystem : ' + e.message);});
             }, function(e){alert('error window.resolveLocalFileSystemURI : ' + e.message);});
+    }
+    catch(e)
+    {
+        alert('exception : ' + e.message);
+    }
+}
+
+function copyDoc5(ruta, fic) {
+    try{
+        window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + '/www/content/es-es/PDF',
+                function (dirEntry) {
+                    alert(dirEntry.fullPath);
+
+        }, function(e){alert('error window.resolveLocalFileSystemURL : ' + e.message);});
     }
     catch(e)
     {
