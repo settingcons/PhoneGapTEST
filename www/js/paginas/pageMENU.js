@@ -13,10 +13,10 @@ function paginaInfoPDF(idioma,fichero){
                 window.open(encodeURI('content/' + idioma + '/PDF/' + fichero), '_blank','location=no, menubar=yes, titlebar=yes');
                 */
                 var fic =  fichero;
-                alert(" cordova.plugins.fileOpener.open('" + fic + "')");
-                cordova.plugins.FileOpener.open(fic);
+                alert(" winjdow.plugins.fileOpener.open('" + fic + "')");
+                window.plugins.fileOpener.open(fic);
 
-                cordova.plugins.FileOpener.openFile(fic, function(data){alert('ok');} , function(e){ alert('error');})
+                /*cordova.plugins.FileOpener.openFile(fic, function(data){alert('ok');} , function(e){ alert('error');})*/
             }
             catch(ex)
             {
@@ -27,7 +27,7 @@ function paginaInfoPDF(idioma,fichero){
         case 'Gentamicina.pdf':
             try
             {
-                var fic = encodeURI('content/' + idioma + '/PDF/' + fichero);
+                var fic = encodeURI('../content/' + idioma + '/PDF/' + fichero);
                 alert(" window.plugins.fileOpener.open('" + fic + "')");
                 window.plugins.fileOpener.open(fic);
                 /*cordova.plugins.fileopener.open(fic);*/
@@ -45,8 +45,8 @@ function paginaInfoPDF(idioma,fichero){
             try
             {
                 var fic = getPath() + 'content/' + idioma + '/PDF/' + fichero;
-                alert(" window.cordova.plugins.fileOpener.open('" + fic + "')");
-                window.cordova.plugins.fileOpener.open(fic);
+                alert(" window.plugins.fileOpener.open('" + fic + "')");
+                window.plugins.fileOpener.open(fic);
                 /*cordova.plugins.fileOpener.open(fic);*/
 
                 //alert("window.cordova.plugins.FileOpener.openFile.open(" + fic + ", function(e){ alert('error')} , function(data){ alert('ok')})");
