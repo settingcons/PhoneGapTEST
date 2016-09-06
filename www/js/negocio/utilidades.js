@@ -612,13 +612,13 @@ function copyDoc6(ruta, fic) {
 alert('2- en copyDoc6 ' + dirApp + ruta + fic);
     asset2sd.copyFile({
             asset_file: dirApp + ruta + fic,  //"www/images/photo.jpg",
-            destination_file: "infCateter/" + fic
+            destination_file: fic
         },
         function () {
             alert('success');
         },
-        function () {
-            alert('fail');
+        function (e) {
+            alert('fail : ' + e);
         }
     );
 }
