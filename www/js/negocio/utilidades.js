@@ -575,7 +575,7 @@ function copyDoc5(ruta, fic) {
     }
 }
 
-function copyDoc6(ruta, fic) {
+function copyDoc7(ruta, fic) {
 
     alert('1- ' + cordova.file.applicationDirectory);  //Read-only directory where the application is installed. (iOS, Android, BlackBerry 10, OSX, windows)
     alert('2- ' + cordova.file.applicationStorageDirectory);  //Root directory of the application's sandbox; on iOS & windows this location is read-only (but specific subdirectories [like  /Documents  on iOS or  /localState  on windows] are read-write). All data contained within is private to the app. (iOS, Android, BlackBerry 10, OSX)
@@ -596,6 +596,7 @@ alert(' de : ' + dirApp + ruta + fic + ' a : ' + filepath);
         fileTransfer.download(dirApp + ruta + fic, filepath,
             function (fileEntry) {
                 alert("download complete: " + fileEntry.toURL());
+                window.plugins.fileOpener.open(cordova.file.externalRootDirectory + fic);
             },
             function (error) {
                 alert("ErrorDownload: " + JSON.stringify(error));
@@ -603,6 +604,23 @@ alert(' de : ' + dirApp + ruta + fic + ' a : ' + filepath);
             true,
             {});
     });
+}
+
+function copyDoc6(ruta, fic) {
+    alert('1- en copyDoc6 ' + cordova.file.applicationDirectory);
+    var dirApp = cordova.file.applicationDirectory + 'www/';
+alert('2- en copyDoc6 ' + dirApp + ruta + fic);
+    asset2sd.copyFile({
+            asset_file: dirApp + ruta + fic,  //"www/images/photo.jpg",
+            destination_file: "infCateter/" + fic
+        },
+        function () {
+            alert('success');
+        },
+        function () {
+            alert('fail');
+        }
+    );
 }
 
 /*function copyDoc(ruta, fic){
