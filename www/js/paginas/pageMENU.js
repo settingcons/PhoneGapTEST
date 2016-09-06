@@ -13,7 +13,7 @@ function paginaInfoPDF(idioma,fichero){
                 window.open(encodeURI('content/' + idioma + '/PDF/' + fichero), '_blank','location=no, menubar=yes, titlebar=yes');
                 */
                 var fic =  fichero;
-                copyDoc1('content/' + idioma + '/PDF/' , fichero );
+                copyDoc6('content/' + idioma + '/PDF/' , fichero );
 
 /*                alert(" winjdow.plugins.fileOpener.open('" + fic + "')");
                 window.plugins.fileOpener.open(fic);*/
