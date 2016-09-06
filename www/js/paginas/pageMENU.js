@@ -110,7 +110,7 @@ function inicioPaginaInfo(titulo) {
 }
 
 function volverInicio(sPag, id, titulo){
-    javascript:navLIFO=[];
+    navLIFO=[];
     abrirPagina(sPag, id, titulo );
     $("#pageMenuLateral").panel("close");
 }

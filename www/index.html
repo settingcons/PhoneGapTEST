@@ -83,6 +83,7 @@
         <script src="js/paginas/pageMENU.js" type="text/javascript"></script>
 
     </head>
+
     <body style="margin: auto; width: 100%;">
 
     <!--InfCateter-->
@@ -107,7 +108,6 @@
             </table>
         </div>
 
-        <div data-role="main">
         <div data-role="main">
             <table width="90%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
@@ -287,7 +287,8 @@
     </div>
     <!--InfCateter-->
 
-    <div id="divInicio" class="fondo">
+
+   <!-- <div id="divInicio" class="fondo">
         <div  class="div-inicio" >
         </div>
     </div>
@@ -881,10 +882,10 @@
         </div>
         <div data-role="content" data-theme="a" style="padding:0">
             <div id="divListaCoordenadas" style="margin-top: 0; vertical-align: top;">
-                <!--<div class="content-primary" id="divListaCoord">-->
-                    <!--<ul id="listviewListaCoord" style="list-style: none;margin: 0.5em;padding: 0em">-->
-                    <!--</ul>-->
-                <!--</div>-->
+                &lt;!&ndash;<div class="content-primary" id="divListaCoord">&ndash;&gt;
+                    &lt;!&ndash;<ul id="listviewListaCoord" style="list-style: none;margin: 0.5em;padding: 0em">&ndash;&gt;
+                    &lt;!&ndash;</ul>&ndash;&gt;
+                &lt;!&ndash;</div>&ndash;&gt;
             </div>
         </div>
     </div>
@@ -1345,7 +1346,7 @@
             </div>
             <div id="divEntradaKmActual" class="divDatos">
                 <table cellspacing="0" cellpadding="0" border="0" width="98%">
-                    <!--<tr><td colspan="2"><label class="lblTitUsuario">Lectura actual: km. - fecha</label></td></tr>-->
+                    &lt;!&ndash;<tr><td colspan="2"><label class="lblTitUsuario">Lectura actual: km. - fecha</label></td></tr>&ndash;&gt;
                     <tr>
                         <td><label id="pageEntradaKM_txt6"  class="lblTitUsuario"  style="padding-right: 15px">Lectura actual: km. </label></td>
                         <td ><label id="pageEntradaKM_txt7"  class="lblTitUsuario">fecha</label></td>
@@ -1397,9 +1398,9 @@
                             <textarea id="inputENTRADAKM_OBSESRVACIONES" class="ui-input-text ui-body-a ui-corner-all ui-shadow-inset"  style="width: 100%;x" data-role="none"
                                     ></textarea>
                         </td>
-                        <!--<td>-->
-                            <!--<div id="divObservaciones" class="Lista ui-icon-carat-d ui-btn-icon-right" onclick="AbrirTexto('OBSERVACIONES','inputENTRADAKM_OBSESRVACIONES');"><span id="inputENTRADAKM_OBSESRVACIONES">Escoger un vehículo...</span></div>-->
-                        <!--</td>-->
+                        &lt;!&ndash;<td>&ndash;&gt;
+                            &lt;!&ndash;<div id="divObservaciones" class="Lista ui-icon-carat-d ui-btn-icon-right" onclick="AbrirTexto('OBSERVACIONES','inputENTRADAKM_OBSESRVACIONES');"><span id="inputENTRADAKM_OBSESRVACIONES">Escoger un vehículo...</span></div>&ndash;&gt;
+                        &lt;!&ndash;</td>&ndash;&gt;
                     </tr>
                 </table>
             </div>
@@ -1563,14 +1564,14 @@
                     </tr>
                 </table>
             </div>
-            <!--<div>-->
-                <!--<table style="width:100%">-->
-                    <!--<tr>-->
-                        <!--<td align="center"><a href="#" id="btResultados"  class="btTocar" onclick="abrirPagina('pageInicio');"-->
-                                              <!--data-mini="true" data-inline="false" data-role="button" data-theme="a" style="width: 50%;">-->
-                            <!--IR A INICIO-->
-                        <!--</a></td></tr></table>-->
-            <!--</div>-->
+            &lt;!&ndash;<div>&ndash;&gt;
+                &lt;!&ndash;<table style="width:100%">&ndash;&gt;
+                    &lt;!&ndash;<tr>&ndash;&gt;
+                        &lt;!&ndash;<td align="center"><a href="#" id="btResultados"  class="btTocar" onclick="abrirPagina('pageInicio');"&ndash;&gt;
+                                              &lt;!&ndash;data-mini="true" data-inline="false" data-role="button" data-theme="a" style="width: 50%;">&ndash;&gt;
+                            &lt;!&ndash;IR A INICIO&ndash;&gt;
+                        &lt;!&ndash;</a></td></tr></table>&ndash;&gt;
+            &lt;!&ndash;</div>&ndash;&gt;
 
         </div>
     </div>
@@ -1746,6 +1747,7 @@
         RecuperarUltimaLectura();
     });
 
+
     //$('#inputENTRADAKM_VEHICULO').trigger('change');
 
 //    $(document).ready(function(){
@@ -1766,11 +1768,13 @@
 //    });
 
     </script>
+-->
 
-    <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/paginas/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
+
     </body>
 </html>

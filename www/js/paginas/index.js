@@ -110,22 +110,29 @@ function deviceReady() {
         */
 
         copiaPDFs();
-        navLIFO.push("pageMENU|0|");
-        $('#divInicio').hide();
-        cargaPaginaInfoCateter('es-es', 0);
+        $.doTimeout(1500, inicio());
 
 /*        setTimeout(function() {
             $.mobile.changePage('#pageMENU', {transition: "none"});
-        }, 1000);*/
+        }, 1000);
+*/
 
 /*
-
         cargaPaginaInfoCateter('es-es', 0);
         $.mobile.changePage('#pageMENU', {transition: "none"});
 */
 
     }
-    catch(ex){MostrarPantallaLogin();mensaje(ex.message,'msj_1');}
+    catch(ex){
+        /*MostrarPantallaLogin();*/
+        mensaje(ex.message,'msj_1');
+    }
+}
+
+function inicio(){
+    navLIFO.push("pageMENU|0|");
+ /*   $('#divInicio').hide();*/
+    cargaPaginaInfoCateter('es-es', 0);
 }
 
 /* InfCateter */
@@ -161,28 +168,6 @@ function abrirPagina(sPag, id, titulo) {
         navLIFO.push(sPag + "|" + id + "|" + titulo);
 
         $.mobile.changePage('#' + sPag, {transition: "slide"});
-
-        if(navLIFO.length > 1) {
-            //Imagen del header --> Atrás
-            /*            $("#imgHeaderAtras").attr("src","images/back.png");
-             $("#imgHeaderAtras").attr("onclick","Atras()");*/
-            //Texto del header --> Atrás
-            /*        itemAnterior = "atrás";
-             if (typeof itemAnterior !== "undefined" && itemAnterior != "") $("#txtHeaderAtras").html(itemAnterior);*/
-
-            //Texto de header --> Título
-            //if(typeof ? !== "undefined") $("#txtHeaderTitulo").html(?);
-        }
-        else {
-            //Imagen del header --> Atrás
-            /*            $("#imgHeaderAtras").attr("src","images/cateter.png");
-             $("#imgHeaderAtras").attr("onclick","");*/
-            //Texto del header --> Atrás
-            /*$("#txtHeaderAtras").html("");*/
-
-            //Texto de header --> Título
-            //if(typeof ? !== "undefined") $("#txtHeaderTitulo").html(?);
-        }
 
         //Texto de body --> Titulo
         if(typeof titulo !== "undefined") $("#tituloMenu").html(titulo);
