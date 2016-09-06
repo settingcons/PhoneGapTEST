@@ -3,74 +3,16 @@ var tituloXML = "";
 
 /* Muestra un PDF del directorio PDF según idioma */
 function paginaInfoPDF(idioma,fichero){
-    switch(fichero)
+    var ruta = "file:///sdcard/infCateter/";
+    try
     {
-        case 'Ciprofloxacino.pdf':
-            try
-            {
-                /*
-                alert("window.open(" + encodeURI('content/' + idioma + '/PDF/' + fichero) + ", '_blank','location=no, menubar=yes, titlebar=yes')");
-                window.open(encodeURI('content/' + idioma + '/PDF/' + fichero), '_blank','location=no, menubar=yes, titlebar=yes');
-                */
-                var fic =  "file:///sdcard/infCateter/" + fichero;
-                alert(" winjdow.plugins.fileOpener.open('" + fic + "')");
-                window.plugins.fileOpener.open(fic);
-
-                /*cordova.plugins.FileOpener.openFile(fic, function(data){alert('ok');} , function(e){ alert('error');})*/
-            }
-            catch(ex)
-            {
-                alert('error : ' + ex.message);
-            }
-            break;
-
-        case 'Gentamicina.pdf':
-            try
-            {
-
-                var fic = encodeURI('../../content/' + idioma + '/PDF/' + fichero);
-alert(fic);
-                copyDoc4('content/' + idioma + '/PDF/' , fichero );
-
-                //alert(" window.plugins.fileOpener.open('" + fichero + "')");
-
-                //window.plugins.fileOpener.open(fichero);
-
-                /*cordova.plugins.fileopener.open(fic);*/
-
-/*                alert("window.open(" + fic + ", '_top','location=yes, menubar=yes, titlebar=yes')");
-                window.open(fic, '_top','location=yes, menubar=yes, titlebar=yes');*/
-            }
-            catch(ex)
-            {
-                alert('error : ' + ex.message);
-            }
-            break;
-
-        case 'Paracetamol.pdf':
-            try
-            {
-                var fic = getPath() + 'content/' + idioma + '/PDF/' + fichero;
-
-                copyDoc3('content/' + idioma + '/PDF/' , fichero );
-
-/*                alert(" window.plugins.fileOpener.open('" + fic + "')");
-                window.plugins.fileOpener.open(fic);*/
-
-                /*cordova.plugins.fileOpener.open(fic);*/
-
-                //alert("window.cordova.plugins.FileOpener.openFile.open(" + fic + ", function(e){ alert('error')} , function(data){ alert('ok')})");
-                //window.cordova.plugins.FileOpener.openFile.open(fic, function(e){ alert('error')} , function(data){ alert('ok')});
-                //window.plugins.fileOpener.open(getPath() + 'content/' + idioma + '/PDF/' + fichero , onSuccess, onError);
-                //window.open(encodeURI(getPath() + 'content/' + idioma + '/PDF/') + fichero, '_top','location=yes, menubar=yes, titlebar=yes');
-            }
-            catch(ex)
-            {
-                alert('error : ' + ex.message);
-            }
-            break;
+        var fic =  ruta + fichero;
+        window.plugins.fileOpener.open(fic);
     }
-
+    catch(ex)
+    {
+        alert('error : ' + ex.message);
+    }
 }
 
 /* Muestra el texto XML a partir de Textes.xml */
