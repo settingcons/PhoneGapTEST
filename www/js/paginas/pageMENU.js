@@ -12,7 +12,7 @@ function paginaInfoPDF(idioma,fichero){
                 alert("window.open(" + encodeURI('content/' + idioma + '/PDF/' + fichero) + ", '_blank','location=no, menubar=yes, titlebar=yes')");
                 window.open(encodeURI('content/' + idioma + '/PDF/' + fichero), '_blank','location=no, menubar=yes, titlebar=yes');
                 */
-                var fic =  "infCateter/" + fichero;
+                var fic =  "file:///sdcard/infCateter/" + fichero;
                 alert(" winjdow.plugins.fileOpener.open('" + fic + "')");
                 window.plugins.fileOpener.open(fic);
 
