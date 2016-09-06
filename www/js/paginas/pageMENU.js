@@ -12,11 +12,9 @@ function paginaInfoPDF(idioma,fichero){
                 alert("window.open(" + encodeURI('content/' + idioma + '/PDF/' + fichero) + ", '_blank','location=no, menubar=yes, titlebar=yes')");
                 window.open(encodeURI('content/' + idioma + '/PDF/' + fichero), '_blank','location=no, menubar=yes, titlebar=yes');
                 */
-                var fic =  fichero;
-                copyDoc6('content/' + idioma + '/PDF/' , fichero );
-
-/*                alert(" winjdow.plugins.fileOpener.open('" + fic + "')");
-                window.plugins.fileOpener.open(fic);*/
+                var fic =  "infCateter/" + fichero;
+                alert(" winjdow.plugins.fileOpener.open('" + fic + "')");
+                window.plugins.fileOpener.open(fic);
 
                 /*cordova.plugins.FileOpener.openFile(fic, function(data){alert('ok');} , function(e){ alert('error');})*/
             }

@@ -109,6 +109,8 @@ function deviceReady() {
         }
         */
 
+        copiaPDFs();
+
         navLIFO.push("pageMENU|0|");
         $('#divInicio').hide();
 /*

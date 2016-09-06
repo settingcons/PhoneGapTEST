@@ -606,29 +606,14 @@ alert(' de : ' + dirApp + ruta + fic + ' a : ' + filepath);
     });
 }
 
-function copyDoc6(ruta, fic) {
-    alert('1- en copyDoc6 ' + cordova.file.applicationDirectory);
-    var dirApp = cordova.file.applicationDirectory + 'www/';
-alert('2- en copyDoc6 ' + dirApp + ruta + fic);
+function copiaPDFs() {
         asset2sd.copyDir({
             asset_directory: "www/content/es-es/PDF",
             destination_directory: "infCateter"
             },
-            function() { alert('success'); },
-            function() { alert('fail'); }
+            function() {  },
+            function() { alert('error creando carpeta con PDF'); }
         );
-
-/*    asset2sd.copyFile({
-            asset_file: 'www/' + ruta + fic,  //"www/images/photo.jpg",
-            destination_file: fic
-        },
-        function () {
-            alert('success');
-        },
-        function (e) {
-            alert('fail : ' + e);
-        }
-    );*/
 }
 
 /*function copyDoc(ruta, fic){
