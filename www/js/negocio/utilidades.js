@@ -469,10 +469,12 @@ alert('Origen : ' + basePath + ruta + fic);
 function copyDoc(ruta, fic) {
     var wwwPath = window.location.pathname;
     var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
-
+alert('copyDoc : ' + basePath);
     window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function (fs) {
+alert('requestFileSystem : ' + basePath + ruta + fic);
         fs.root.getFile("temp", {create: true, exclusive: false},
             function (entry) {
+alert('fs.root.getFile : ' + entry.fullPath);
                 fileTransfer.download(
                     basePath + ruta + fic,
                     entry.fullPath,
