@@ -424,35 +424,51 @@ function leeXML(idioma, fichero) {
     }
 }
 
+/*InfCateter*/
 function getPath() {
     // Get local path for Phonegap
     path = window.location.pathname;
     path = path.substr( path, path.length - 10 );
     return 'file://' + path;
 }
-/*InfCateter*/
 
-function gotFS(fileSystem) {
-    alert("got filesystem");
-    // save the file system for later access
-    alert(fileSystem.root.fullPath);
-    window.rootFS = fileSystem.root;
-    alert(rootFS.fullPath);
+/*function onSuccess(fileEntry) {
+    alert('onSuccess : ' + fileEntry.name);
+    var dirDestino = new DirectoryEntry(parentName, parent);
+    fileEntry.copyTo(dirDestino, "Gentamicina.pdf", function(o){alert('copiado');}, function(e){alert('error : ' + e.message);} );
+}
+function copyDoc(ruta, fic) {
+    var wwwPath = window.location.pathname;
+    var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
+    window.resolveLocalFileSystemURI(basePath + ruta + fic, onSuccess, function(e){alert('error : ' + e.message);});
+}*/
+
+function copyDoc(ruta, fic) {
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+        alert(fileSystem.name);
+        alert(fileSystem.root.name);
+    }, function (e) {
+        alert('error : ' + e.message);
+    });
 }
 
-function copyDoc(ruta, fic){
+/*function copyDoc(ruta, fic){
 alert('0-copyDoc ' + ruta + fic);
     var wwwPath = window.location.pathname;
 alert('1-copyDoc ' + wwwPath);
     var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);
 alert('2- ' + basePath + ruta + fic);
 
-alert("OTRO: " + cordova.file.applicationDirectory);
+*//*alert("OTRO: " + cordova.file.applicationDirectory);*//*
 
-    window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, function(e){alert('error');});
+    function copyFile(entry) {
+        var parent = document.getElementById('parent').value,
+            parentName = parent.substring(parent.lastIndexOf('/')+1),
+            parentEntry = new DirectoryEntry(parentName, parent);
 
-    alert('sigue');
+        // copy the file to a new directory and rename it
+        entry.copyTo(parentEntry, "file.copy", success, fail);
+    }
 
     window.resolveLocalFileSystemURL(basePath + ruta + fic,
         function(elFic){
@@ -475,4 +491,4 @@ alert('4-copio a : ' + documentsPath);
         function(){
             alert('failure! file was not found');
         });
-}
+}*/
