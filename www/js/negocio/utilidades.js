@@ -578,13 +578,13 @@ function copyDoc5(ruta, fic) {
 function copyDoc6(ruta, fic) {
 
     alert('1- ' + cordova.file.applicationDirectory);  //Read-only directory where the application is installed. (iOS, Android, BlackBerry 10, OSX, windows)
-    alert('2- ' + ccordova.file.applicationStorageDirectory);  //Root directory of the application's sandbox; on iOS & windows this location is read-only (but specific subdirectories [like  /Documents  on iOS or  /localState  on windows] are read-write). All data contained within is private to the app. (iOS, Android, BlackBerry 10, OSX)
-    alert('3- ' + ccordova.file.dataDirectory);  //Persistent and private data storage within the application's sandbox using internal memory (on Android, if you need to use external memory, use  .externalDataDirectory ). On iOS, this directory is not synced with iCloud (use  .syncedDataDirectory ). (iOS, Android, BlackBerry 10, windows)
-    alert('4- ' + ccordova.file.cacheDirectory);  //Directory for cached data files or any files that your app can re-create easily. The OS may delete these files when the device runs low on storage, nevertheless, apps should not rely on the OS to delete files in here. (iOS, Android, BlackBerry 10, OSX, windows)
-    alert('5- ' + ccordova.file.externalApplicationStorageDirectory);  //Application space on external storage. (Android)
-    alert('6- ' + ccordova.file.externalDataDirectory);  //Where to put app-specific data files on external storage. (Android)
-    alert('7- ' + ccordova.file.externalCacheDirectory);  //Application cache on external storage. (Android)
-    alert('8- ' + ccordova.file.externalRootDirectory);  //External storage (SD card) root. (Android, BlackBerry 10)
+    alert('2- ' + cordova.file.applicationStorageDirectory);  //Root directory of the application's sandbox; on iOS & windows this location is read-only (but specific subdirectories [like  /Documents  on iOS or  /localState  on windows] are read-write). All data contained within is private to the app. (iOS, Android, BlackBerry 10, OSX)
+    alert('3- ' + cordova.file.dataDirectory);  //Persistent and private data storage within the application's sandbox using internal memory (on Android, if you need to use external memory, use  .externalDataDirectory ). On iOS, this directory is not synced with iCloud (use  .syncedDataDirectory ). (iOS, Android, BlackBerry 10, windows)
+    alert('4- ' + cordova.file.cacheDirectory);  //Directory for cached data files or any files that your app can re-create easily. The OS may delete these files when the device runs low on storage, nevertheless, apps should not rely on the OS to delete files in here. (iOS, Android, BlackBerry 10, OSX, windows)
+    alert('5- ' + cordova.file.externalApplicationStorageDirectory);  //Application space on external storage. (Android)
+    alert('6- ' + cordova.file.externalDataDirectory);  //Where to put app-specific data files on external storage. (Android)
+    alert('7- ' + cordova.file.externalCacheDirectory);  //Application cache on external storage. (Android)
+    alert('8- ' + cordova.file.externalRootDirectory);  //External storage (SD card) root. (Android, BlackBerry 10)
 
     var dirApp = cordova.file.applicationDirectory;
     alert(dirApp);
