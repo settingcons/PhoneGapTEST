@@ -12,14 +12,16 @@
     <!--<preference name="phonegap-version" value="cli-6.3.0" />-->
 
     <preference name="permissions" value="none" />
-    <!-- si se utiliza la versión de phonegap 3.6.3 no funciona la geolocalización -->
 
+    <!-- si se utiliza la versión de phonegap 3.6.3 no funciona la geolocalización -->
     <preference name="phonegap-version" value="3.7.0" />
 
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
+
     <!--si se pone fullscreen a true se oculta la barra de estado de la parte superior -->
     <preference name="fullscreen" value="true" />
+
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
@@ -32,26 +34,23 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
-    <preference name="KeepRunning" value="true"/>
+<!-- IC    <preference name="KeepRunning" value="true"/>-->
 
     <feature name="http://api.phonegap.com/1.0/device" />
-    <feature name="http://api.phonegap.com/1.0/camera"/>
+<!-- IC   <feature name="http://api.phonegap.com/1.0/camera"/>-->
     <feature name="http://api.phonegap.com/1.0/file"/>
-    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+<!-- IC   <feature name="http://api.phonegap.com/1.0/geolocation"/>-->
     <feature name="http://api.phonegap.com/1.0/media"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
-    <!--<feature name="Camera">-->
-    <!--<param name="ios-package" value="CDVCamera" />-->
-    <!--</feature>-->
 
     <feature name="SplashScreen">
         <param name="ios-package" value="CDVSplashScreen" />
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
     </feature>
     <feature name="Media">
-    <param name="ios-package" value="CDVSound" />
-    <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+<!-- IC   <param name="ios-package" value="CDVSound" />-->
+<!-- IC   <param name="android-package" value="org.apache.cordova.media.AudioHandler" />-->
     </feature>
     <gap:plugin name="org.apache.cordova.battery-status"/>
     <!--<gap:plugin name="org.apache.cordova.camera"/>-->
@@ -70,7 +69,7 @@
     <gap:plugin name="org.apache.cordova.inappbrowser"/>
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.network-information"  />
-    <gap:plugin name="org.apache.cordova.vibration"/>
+<!-- IC   <gap:plugin name="org.apache.cordova.vibration"/>-->
 
     <gap:plugin name="org.apache.cordova.file" />
     <!--<preference name="iosPersistentFileLocation" value="Library" />-->
@@ -78,30 +77,31 @@
     <!--<preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,root" />-->
     <!--geolocalización para android-->
     <preference name="android-build-tool" value="gradle" />
-    <plugin name="com.settingconsultoria.gpstracking" spec="1.0.22" source="pgb" />
+<!-- IC   <plugin name="com.settingconsultoria.gpstracking" spec="1.0.22" source="pgb" />-->
 
     <!--geolocalización para ios-->
-    <plugin name="settingconsultoria.geolocation.ios" spec="0.1" source="pgb" />
+<!-- IC   <plugin name="settingconsultoria.geolocation.ios" spec="0.1" source="pgb" />-->
+
     <!--<plugin name="settingconsultoria.cordova.plugins.geolocation" spec="0.1" source="pgb" />-->
     <!--<feature name="Geolocation">-->
         <!--<param name="ios-package" value="CDVLocation" />-->
         <!--<param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />-->
     <!--</feature>-->
 
-    <!--Plugin para visualizar PDF's-->
+    <!-- IC Plugin para visualizar PDF's-->
     <plugin name="com.cordova.plugins.fileopener" spec="1.0.1" source="pgb" />
 
     <!--Plugin para llamar por teléfono-->
 <!--    <gap:plugin name="com.teamnemitoff.phonedialer" version="0.3.0" />-->
 
     <!--Plugin para enviar email-->
-    <gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.0" />
+<!-- IC   <gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.0" />-->
 
     <!-- ocultar statusbar en ios -->
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0"/>
 
     <!-- para activar la geolocalización en background para ios-->
-    <plugin name="com.wizital.plugins.backgroundlocationenabler" spec="1.0.2" source="pgb" />
+<!-- IC   <plugin name="com.wizital.plugins.backgroundlocationenabler" spec="1.0.2" source="pgb" />-->
 
     <!-- para que la app funcione en background -->
     <!--<plugin name="de.appplant.cordova.plugin.background-mode" spec="0.6.4" source="pgb" />-->
@@ -109,16 +109,18 @@
     <!--<gap:plugin name="cordova.plugins.diagnostic" source="npm" />-->
 
     <!--plugin para detectar si el GPS está activo-->
-    <gap:plugin name="settingconsultoria.cordova.plugins.diagnostic" version="0.0.1" />
+<!-- IC   <gap:plugin name="settingconsultoria.cordova.plugins.diagnostic" version="0.0.1" />-->
 
-    <!--<gap:plugin name="com.gkcgautam.asset2sd" version="2.0.1" />-->
-    <plugin name="com.gkcgautam.asset2sd" spec="2.0.0" source="pgb" />
+    <!-- IC para copiar directorios de carpetas de la App a carpetas del sistema -->
+    <plugin name="com.gkcgautam.asset2sd" spec="2.0.1" source="pgb" />
 
     <!--para utilizar el plugin de diagnóstico-->
+<!-- IC
     <feature name="Diagnostic" >
         <param name="ios-package" value="Diagnostic" />
         <param name="android-package" value="cordova.plugins.diagnostic"/>
     </feature>
+-->
 
     <!--<plugin name="SplashScreen" value="”org.apache.cordova.SplashScreen"  source="npm"/>-->
 
@@ -145,25 +147,26 @@
     <!--</feature>-->
 
     <!--plugin para limpiar la caché-->
+<!-- IC
+
     <plugin name="com.sharinglabs.cordova.plugin.cache" spec="1.0.0" source="pgb" />
     <feature name="Cache" >
         <param name="ios-package" value="Cache" />
         <param name="android-package" value="com.sharinglabs.cordova.plugin.cache.Cache"/>
     </feature>
+-->
 
     <!--para que no abra más de una instancia en android-->
     <gap:config-file platform="android" parent="/manifest/application">
         <activity android:launchMode="singleInstance" />
     </gap:config-file>
 
-
     <!--plugin pasra usar sqlite-->
-    <plugin name="com.brodysoft.sqliteplugin" spec="1.0.6" source="pgb" />
+<!-- IC   <plugin name="com.brodysoft.sqliteplugin" spec="1.0.6" source="pgb" />-->
 
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
-
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
@@ -190,6 +193,6 @@
 
 
     <access origin="*" />
-<!--    <access origin="tel:*" launch-external="yes" />-->
-    <access origin="mailto:*" launch-external="yes" />
+<!-- IC   <access origin="tel:*" launch-external="yes" />-->
+<!-- IC   <access origin="mailto:*" launch-external="yes" />-->
 </widget>

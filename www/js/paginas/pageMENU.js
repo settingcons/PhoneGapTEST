@@ -1,7 +1,7 @@
 var textoXML = "";
 var tituloXML = "";
 
-/* Muestra un PDF del directorio PDF según idioma */
+/* Muestra un PDF del directorio del sistema (sdcard/infCateter) */
 function paginaInfoPDF(idioma,fichero){
     var ruta = "file:///sdcard/infCateter/";
     try
@@ -77,26 +77,12 @@ function filtroFichas(idioma){
                 }
             });
         });
-
         $("#ulFichas").append(items).listview('refresh');
-
     }
     catch(ex)
     {
         alert(ex.message);
     }
-
-/*    //Buscar fichas que cumplan el filtro
-    var sFiltro = $("#inputFiltro").val();
-
-    items += "<li><a href='#'>CIPROFLOXACINO 2 MG/ML</li></a>";
-    items += "<li><a href='#'>GENTAMICINA 5 MG/ML</a></li>";
-    items += "<li><a href='#'>PARACETAMOL 1 GR</a></li>";
-    items += "<li><a href='#'>ASPIRINA 500 MG</a></li>";
-    items += "<li><a href='#'>DAUNORRUBICINA LIPOSOMAL</a></li>";
-
-    //Crear el listview
-    $("#ulFichas").append(items).listview('refresh');*/
 }
 
 function inicioPaginaAyuda(titulo) {
@@ -160,15 +146,7 @@ function cargaPaginaInfoCateter(idioma, idPadreSel) {
                         sItem += titol;
                         sItem += "</font></a></td></tr></table></div></li>";
 
-/*
-                        $('#pageMENU').bind('pageinit', function() {
-                            $('#ulMenu').listview('refresh');
-                        });
-*/
-
                         $("#ulMenu").append(sItem).listview('refresh');
-
-                        //$("#ulMenu").append("<li><a href='#' style='text-decoration:none;' onclick=\"abrirPagina('pageMENU','" + id + "','" + titol + "')\">" + img + "<font style='white-space:normal;'>" + titol + "</font></a></li>").listview('refresh');
                     }
                     else
                     {
@@ -185,7 +163,6 @@ function cargaPaginaInfoCateter(idioma, idPadreSel) {
                                 sItem += titol;
                                 sItem += "</font></a></td></tr></table></div></li>";
                                 $("#ulMenu").append(sItem).listview('refresh');
-                                //$("#ulMenu").append("<li><a href='#' style='text-decoration:none;' onclick=\"paginaInfoTXT('" + idioma + "','" + id + "','" + titol + "')\"> " + img + "<font style='white-space:normal;'>" + titol + "</font></a></li>").listview('refresh');
                                 break;
 
                             case '':  //no hay link, es sólo para leer
@@ -199,7 +176,6 @@ function cargaPaginaInfoCateter(idioma, idPadreSel) {
                                 sItem += titol;
                                 sItem += "</font></td></tr></table></div></li>";
                                 $("#ulMenu").append(sItem).listview('refresh');
-                                //$("#ulMenu").append("<li>" + img + "<font style='white-space:normal;'>" + titol + "</font></li>").listview('refresh');
                                 break;
 
                             case 'FILTRO':  //Buscador de fichas
@@ -214,7 +190,6 @@ function cargaPaginaInfoCateter(idioma, idPadreSel) {
                                 sItem += titol;
                                 sItem += "</font></a></td></tr></table></div></li>";
                                 $("#ulMenu").append(sItem).listview('refresh');
-                                //$("#ulMenu").append("<li><a href='#' style='text-decoration:none;' onclick=\"paginaFiltroFichas('" + idioma + "','" + id + "','" + titol + "')\"> " + img + "<font style='white-space:normal;'>" + titol + "</font></a></li>").listview('refresh');
                                 break;
 
                             default:  //link al fichero PDF especificado
@@ -229,18 +204,16 @@ function cargaPaginaInfoCateter(idioma, idPadreSel) {
                                 sItem += titol;
                                 sItem += "</font></a></td></tr></table></div></li>";
                                 $("#ulMenu").append(sItem).listview('refresh');
-                                //$("#ulMenu").append("<li><a href='#' style='text-decoration:none;' onclick=\"paginaInfoPDF('" + idioma + "','" + tieneLink + "')\" >" + img + "<font style='white-space:normal;'>" + titol + "</font></a></li>").listview('refresh');
                                 break;
                         }
                     }
                 }
             });
         });
-
     }
     catch(ex)
     {
-        alert(ex.message);
+        alert('Error : ' + ex.message);
     }
 
 }
