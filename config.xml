@@ -112,7 +112,7 @@
 <!-- IC   <gap:plugin name="settingconsultoria.cordova.plugins.diagnostic" version="0.0.1" />-->
 
     <!-- IC para copiar directorios de carpetas de la App a carpetas del sistema -->
-    <plugin name="com.gkcgautam.asset2sd" spec="2.0.1" source="pgb" />
+    <plugin name="com.gkcgautam.asset2sd" spec="2.0.0" source="pgb" />
 
     <!--para utilizar el plugin de diagnóstico-->
 <!-- IC
